@@ -31,7 +31,5 @@ req1 = requests.post(url6,data=values_json,headers=headers)
 req1 = requests.post(url7,data=values_json,headers=headers)
 req1 = requests.post(url8,data=values_json,headers=headers)
 req1 = requests.post(url9,data=values_json,headers=headers)
-change = req.json()
-new_req = json.dumps(change, ensure_ascii=False)
-print(new_req)
+
 
