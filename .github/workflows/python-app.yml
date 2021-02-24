@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+  # 定时任务，在每天的8点自动执行
+    - cron: '0 0 * * *'
 
 jobs:
   build:
