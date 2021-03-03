@@ -31,7 +31,9 @@ if __name__ == '__main__':
 
     info=getarg()
     name=info['name']
+    print(name)
     head=gethead()
+
     for name in name:
         url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
         req = requests.post(url, data=head.values_json, headers=head.headers)
