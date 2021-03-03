@@ -29,7 +29,8 @@ jobs:
       run: |
         pip install requests
     - name: Run health auto
-      run: |
-        python health.py
       env:
         name: ${{ secrets.NAME }}
+      run: |
+        python health.py
+      
