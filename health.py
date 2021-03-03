@@ -20,7 +20,7 @@ def gethead():
 
 def getarg():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-l", dest="name", nargs='*', help="your name list")
+    parser.add_argument("name", help="your name list")
     args = parser.parse_args()
 
     return {
