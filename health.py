@@ -40,4 +40,4 @@ if __name__ == '__main__':
         for  people in people:
             url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
             req = requests.post(url, data=value, headers=head)
-            print(name + '今日打卡成功！')
+            print(people + '今日打卡成功！')
