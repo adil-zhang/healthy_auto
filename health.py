@@ -34,7 +34,7 @@ if __name__ == '__main__':
     people = getarg()
     print(people)
     head = gethead()
-    if name:
+    if people:
         for  people in people:
             url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
             req = requests.post(url, data=head.values_json, headers=head.headers)
