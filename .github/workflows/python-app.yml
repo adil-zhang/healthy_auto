@@ -32,5 +32,5 @@ jobs:
       env:
         NAME: ${{ secrets.NAME }}
       run: |
-        python health.py  -s ${NAME}
+        python health.py   ${NAME}
       
