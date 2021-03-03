@@ -38,4 +38,4 @@ jobs:
       run: |
         python health.py
       env:
-        name: NAME
+        name: ${{ secrets.NAME }}
