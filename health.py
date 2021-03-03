@@ -20,7 +20,7 @@ def gethead():
 
 def getarg():
     parser = argparse.ArgumentParser()
-        parser.add_argument("-s",
+    parser.add_argument("-s",
                         dest="PEOPLE",
                         nargs='*',
                         help="people name of the NAME list")
