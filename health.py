@@ -7,6 +7,7 @@ import json
 import requests
 import argparse
 
+
 def gethead():
 
     # 请求内容转json
@@ -21,7 +22,7 @@ def getarg():
     parser = argparse.ArgumentParser()
     parser.add_argument("-l", dest="name", nargs='*', help="your name list")
     args = parser.parse_args()
-    
+
     return {
         'name': args.name
     }
@@ -29,14 +30,12 @@ def getarg():
 
 if __name__ == '__main__':
 
-    info=getarg()
-    name=info['name']
+    info = getarg()
+    name = info['name']
     print(name)
-    head=gethead()
-
-    for name in name:
-        url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
-        req = requests.post(url, data=head.values_json, headers=head.headers)
-        print(name + '今日打卡成功！')
-    
-    
+    head = gethead()
+    if name:
+        for name in name:
+            url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
+            req = requests.post(url, data=head.values_json, headers=head.headers)
+            print(name + '今日打卡成功！')
