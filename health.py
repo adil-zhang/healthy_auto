@@ -27,12 +27,12 @@ def getarg():
     parser.add_argument("-l", dest="name", nargs='*', help="your name list")
     args = parser.parse_args()
     
-    eturn {
+    return {
         'name': args.name
     }
 
 
 if __name__ == '__main__':
-    
+
     info=getarg()
     auto = auto_health(info['name'])
