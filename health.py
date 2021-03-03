@@ -7,7 +7,7 @@ import json
 import requests
 import argparse
 
-def auto_health():
+def gethead():
 
     # 请求内容转json
     values = {"province": "北京", "city": "北京市", "addressType": "整租房", "temperature": "36.7", "dayNum": "", "contactHbPerplr": "无接触", "toWh": "未去过/路过武汉", "familySymptom": "无症状", "remarks": "", "otherDesc": "", "backDate": "2020-02-12",
@@ -15,12 +15,7 @@ def auto_health():
     values_json = json.dumps(values)
 # 请求头
     headers = {'content-type': 'application/json'}
-# 多人循环
 
-    for name in name:
-        url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
-        req = requests.post(url, data=values_json, headers=headers)
-        return(name + '今日打卡成功！')
 
 def getarg():
     parser = argparse.ArgumentParser()
@@ -35,4 +30,10 @@ def getarg():
 if __name__ == '__main__':
 
     info=getarg()
-    auto = auto_health(info['name'])
+    head=gethead()
+    for name in name:
+        url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
+        req = requests.post(url, data=head.values_json, headers=head.headers)
+        print(name + '今日打卡成功！')
+    
+    
