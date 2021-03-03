@@ -20,22 +20,22 @@ def gethead():
 
 def getarg():
     parser = argparse.ArgumentParser()
-    parser.add_argument("NAME",nargs='*', help="your name list")
+        parser.add_argument("-s",
+                        dest="PEOPLE",
+                        nargs='*',
+                        help="people name of the NAME list")
     args = parser.parse_args()
-
-    return {
-        'name': args.name
-    }
+    people=args.PEOPLE
+    return people
 
 
 if __name__ == '__main__':
 
-    info = getarg()
-    name = info['name']
-    print(name)
+    people = getarg()
+    print(people)
     head = gethead()
     if name:
-        for name in name:
-            url = 'https://health.foton.com.cn/health-attendance/health/save/'+name+'@foton'
+        for  people in people:
+            url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
             req = requests.post(url, data=head.values_json, headers=head.headers)
             print(name + '今日打卡成功！')

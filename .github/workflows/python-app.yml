@@ -30,7 +30,7 @@ jobs:
         pip install requests
     - name: Run health auto
       env:
-        NAME: ${{ secrets.NAME }}
+        PEOPLE: ${{ secrets.PEOPLE }}
       run: |
-        python health.py   ${NAME}
+        python health.py  -s ${PEOPLE}
       
