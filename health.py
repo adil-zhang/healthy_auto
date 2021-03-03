@@ -5,7 +5,7 @@
 import json
 
 import requests
-
+import argparse
 
 def auto_health():
 
@@ -22,7 +22,17 @@ def auto_health():
         req = requests.post(url, data=values_json, headers=headers)
         return(name + '今日打卡成功！')
 
+def getarg():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-l", dest="name", nargs='*', help="your name list")
+    args = parser.parse_args()
+    
+    eturn {
+        'name': args.name
+    }
+
 
 if __name__ == '__main__':
-
-    auto = auto_health(name)
+    
+    info=getarg()
+    auto = auto_health(info['name'])
