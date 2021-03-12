@@ -36,12 +36,12 @@ if __name__ == '__main__':
     value=getval()
     head = gethead()
     ## 防止每天时间固定，增加休眠时间(虽然actions的时间本来就不是很准确)
-    sl_s=random.randit(1,3600)
+    sl_s=random.randint(1,3600)
     time.sleep(sl) 
     sl_m=sl_s/60
     print('本次休眠时间为'+sl_m+'分钟')
     print('**************耐心等待中*************')
-    
+
     if people:
         for  people in people:
             url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
