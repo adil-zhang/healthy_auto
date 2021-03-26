@@ -53,5 +53,5 @@ if __name__ == '__main__':
             url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
             req = requests.post(url, data=value, headers=head)
             print('********************************')
-            print(people + '今日打卡成功！')
+            print('今日打卡成功！')
  
