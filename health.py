@@ -42,7 +42,7 @@ if __name__ == '__main__':
     value = getval()
     head = gethead()
     # 防止每天时间固定，增加休眠时间(虽然actions的时间本来就不是很准确)
-    sl_s = random.randint(1, 3600)
+    sl_s = random.randint(1, 2)
     time.sleep(sl_s)
     sl_m = int(sl_s/60)
     print('本次休眠时间为'+str(sl_m)+'分钟')
@@ -52,6 +52,6 @@ if __name__ == '__main__':
         for  people in people:
             url = 'https://health.foton.com.cn/health-attendance/health/save/'+people+'@foton'
             req = requests.post(url, data=value, headers=head)
-            print('********************************')
+            print('************people********************')
             print('今日打卡成功！')
  
