@@ -5,7 +5,7 @@ name: Python application
 
 on:
   
-  
+  push:
   schedule:
   # 定时任务，在每天的7点自动执行
     - cron: '0 23 * * *'
